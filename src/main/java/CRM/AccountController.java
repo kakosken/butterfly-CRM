@@ -3,8 +3,12 @@ package CRM;
 import java.util.List;
 
 import javax.ejb.EJB;
+import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
+import javax.faces.context.FacesContext;
+
+
 
 /*
  * Piia Loukeinen, team 3
@@ -36,13 +40,31 @@ public class AccountController {
 	
 	
 	
-	public void addAccount(){
+	public String addAccount(){
 		//uuden käyttäjätili lisääminen
+		
+		String viesti = "Uuden käyttäjätilin lisääminen onnistui "+ account;
+		
+		FacesContext facesContext = FacesContext.getCurrentInstance();
+		//CRMejb.addAccount(account);
+		crmEjb.addAccount(account);
+		
+		FacesMessage facesMessage = new FacesMessage(viesti);
+		facesContext.addMessage(null, facesMessage);
+
+		return "index";
 	}
 	
 	public void deleteAccount(){
 		//poista käyttäjätili
 	}
+	
+
+	public List<Account> searchAccounts() {
+		return crmEjb.search();
+	}
+
+
 	
 	
 	

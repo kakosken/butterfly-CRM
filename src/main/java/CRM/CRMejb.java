@@ -1,8 +1,11 @@
 package CRM;
 
+import java.util.List;
+
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+
 
 
 
@@ -18,6 +21,11 @@ public class CRMejb {
 	
 	public void init(){
 		//Tähän testidataa tietokantaan
+		Account testi = new Account();
+		testi.setName("TestiNimi");
+		testi.setPassword("testisalasana");
+		testi.setUserName("TestiUserName");
+		em.persist(testi);
 	}
 	
 
@@ -32,6 +40,18 @@ public class CRMejb {
 			System.out.println("Uuden käyttäjätilin tallentaminen ei onnistunut");
 		}
 		
+	}
+	
+	public void deleteAccount(Account account){
+		//käyttäjätilin poistaminen
+	}
+	
+	public List<Account> search(){
+		
+		List<Account> accounts = null; 
+		accounts = em.createNamedQuery("searchAll").getResultList();
+		System.out.println("*********** search all ********** => " + accounts);
+		return accounts;
 	}
 
 }

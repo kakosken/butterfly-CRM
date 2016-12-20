@@ -7,8 +7,13 @@
 		<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
 
 		<jta-data-source>jdbc/h2demo</jta-data-source>
-
 		
+	<!-- 	<class>CRM.Company</class>
+		<class>CRM.Order</class>
+		<class>CRM.OrderObject</class>
+		<class>CRM.Customer</class>  -->
+		<class>CRM.Account</class>
+
 		<properties>
 			<property name="eclipselink.ddl-generation" value="drop-and-create-tables" />
 			<property name="eclipselink.ddl-generation.output-mode"

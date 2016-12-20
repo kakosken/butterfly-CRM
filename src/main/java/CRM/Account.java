@@ -8,11 +8,13 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.NamedQuery;
 
 
 @ManagedBean
 @RequestScoped
 @Entity
+@NamedQuery(name = "searchAll", query = "SELECT a from Account a") 
 public class Account implements Serializable{
 	
 	 @Id
