@@ -22,14 +22,15 @@ public class Account implements Serializable{
 	 private String name;
 	 private String userName;
 	 private String password; 
+	 private String email;
+	 private enum Rooli { 
+			ADMINISTRATOR, SALESPERSON, CUSTOMERSERVANT;
+	 }
 	 
-	 public Account(){
+	 public void Account(){
 		 
 	 }
 	 
-	 public void saveNewCustomer(){
-		 
-	 }
 
 	public long getId() {
 		return id;
@@ -59,6 +60,7 @@ public class Account implements Serializable{
 		return password;
 	}
 
+	
 	public void setPassword(String password) {
 		this.password = password;
 	}
