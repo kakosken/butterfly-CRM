@@ -19,6 +19,7 @@ public class CRMejb {
 		
 	}
 	
+	
 	public void init(){
 		//Tähän testidataa tietokantaan
 		Account testi = new Account();

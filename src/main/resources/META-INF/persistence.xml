@@ -8,6 +8,7 @@
 
 		<jta-data-source>jdbc/h2demo</jta-data-source>
 		
+		
 	<!-- 	<class>CRM.Company</class>
 		<class>CRM.Order</class>
 		<class>CRM.OrderObject</class>
