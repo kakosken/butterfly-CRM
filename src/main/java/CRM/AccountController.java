@@ -34,56 +34,17 @@ public class AccountController {
 		this.account = account;
 	}
 	
-	public String saveNewCustomer(){
-		//uuden asiakkaan lisääminen
-		return null;
+	
+	
+	public void addAccount(){
+		//uuden käyttäjätili lisääminen
 	}
 	
-	public void addUser(){
-		//uuden käyttäjän lisääminen
-	}
-	
-	public void deleteUser(){
-		//poista käyttäjä
-	}
-	
-	public String deleteCustomer(){
-		//asiakkaan poistaminen
-		return null;
-	}
-	
-	public List<Order> searchOrder(){
-		//Tuotteen etsiminen eri parametreilla (asiakas, asiakasyritys,
-		// toimitusajankohta, toimituspaikka)
-		return null;
-	}
-	
-	public List<OrderObject> searchOrderObject(){
-		return null;
-		//Haluan hakea toimitusobjekteja kriteerinä (asiakas, asiakasyritys, 
-		//toimitusajankohta, toimitusosoite, objektin tila, objektin nimeke)
-	}
-	
-	public String saveNewCompany(){
-		//uuden yrityksen lisääminen
-		return null;
-	}
-	
-	public String joinCustomerToCompany(){
-		//asiakas liitetään yritykseen?
-		return null;
-	}
-	
-	public String saveOrder(){
-		//uuden tilauksen/toimituksen tallentaminen
-		return null;
-	}
-	
-	public String setCustomerState(){
-		//asiakkaan tilan asettaminen
-		return null;
+	public void deleteAccount(){
+		//poista käyttäjätili
 	}
 	
 	
 	
-}
+	
+} 

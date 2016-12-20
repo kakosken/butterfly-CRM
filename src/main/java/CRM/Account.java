@@ -27,7 +27,7 @@ public class Account implements Serializable{
 			ADMINISTRATOR, SALESPERSON, CUSTOMERSERVANT;
 	 }
 	 
-	 public void Account(){
+	 public Account(){
 		 
 	 }
 	 
