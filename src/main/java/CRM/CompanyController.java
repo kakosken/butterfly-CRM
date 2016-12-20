@@ -2,13 +2,8 @@ package CRM;
 
 /* Terhi Järvenpää */
 
-import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
-import javax.faces.context.FacesContext;
-
-import java.util.List;
-import javax.ejb.EJB;
 
 @ManagedBean
 
@@ -20,4 +15,22 @@ public class CompanyController {
 
 	@ManagedProperty(value = "#{company}")
 	private Company company;
+	
+	public Company getCompany() {
+		return company;
+	}
+
+	public void setCompany(Company company) {
+		this.company = company;
+	}
+	
+	public String saveCompany() {
+		return ("Company saved");
+	}
+	
+	
+
+	public String initialize() {
+		return null;
+	}
 }
