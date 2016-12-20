@@ -23,6 +23,11 @@ public class Company {
     public Company (){
 		super();
 	}
+    
+    
+    
+    
+    
 
 	public Company(String businessId, String name, String phone,
 			String streetAddress, String postcode, String town, String webPage) {
