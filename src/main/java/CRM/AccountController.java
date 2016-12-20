@@ -12,6 +12,7 @@ import javax.faces.bean.ManagedProperty;
 
 @ManagedBean
 public class AccountController {
+	
 
 	
 	@EJB
