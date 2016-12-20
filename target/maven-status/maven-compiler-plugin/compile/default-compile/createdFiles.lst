@@ -1,3 +1,13 @@
-book/BookController.class
-book/Book.class
-book/BookEjb.class
+CRM/Customer.class
+CRM/Account.class
+CRM/Order.class
+CRM/Company.class
+kauppa/Tuote.class
+CRM/CRMejb.class
+CRM/AccountController.class
+CRM/OrderObjectController.class
+CRM/OrderObject.class
+CRM/CustomerController.class
+CRM/CompanyController.class
+CRM/OrderController.class
+CRM/Account$Rooli.class
