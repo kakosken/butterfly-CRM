@@ -1,11 +1,21 @@
 package CRM;
 
-import javax.faces.bean.ManagedProperty;
+/* Terhi Järvenpää */
 
+import java.util.ArrayList;
+
+import javax.annotation.ManagedBean;
+import javax.ejb.EJB;
+import javax.faces.application.FacesMessage;
+import javax.faces.bean.ManagedProperty;
+import javax.faces.context.FacesContext;
+
+
+@ManagedBean
 public class OrderController {
 	
-	//	@EJB
-	//	private CompanyEjb companyEjb;
+	@EJB
+	private CRMejb crmEjb;
 
 	@ManagedProperty(value = "#{order}")
 	private Order order;
@@ -19,17 +29,31 @@ public class OrderController {
 	}
 	
 	public String saveOrder() {
-		return ("Order saved");
+		String viesti = "Order has been successfully saved" ;
+
+		FacesContext facesContext = FacesContext.getCurrentInstance();
+		
+		Order ord = (Order) facesContext.getExternalContext().getRequestMap().get("order");
+		// save order and set facesMessage if error
+
+		
+		FacesMessage facesMessage = new FacesMessage(viesti);
+		facesContext.addMessage(viesti, facesMessage);
+		
+		crmEjb.saveOrder(ord);
+
+		return "index";
 	}
 	
 	
 	
-	//public  List<Order> listOrders() {
-	//	return null;
-	//}
+	/*public  ArrayList<Order> listOrders() {
+		return crmEjb.getOrders();
+	} */
 	
 
 	public String initializeOrder() {
+		crmEjb.init();
 		return null;
 	}
 
