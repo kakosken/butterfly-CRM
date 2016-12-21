@@ -1,5 +1,6 @@
 package CRM;
 
+/* Terhi Järvenpää */
 import java.io.Serializable;
 
 import javax.persistence.*;
@@ -25,9 +26,32 @@ public class Order {
 		this.salesPerson = salesPerson;
 	}
     
-   /* public Order() {
+    public Order() {
 		super();
-	}*/
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getSalesPerson() {
+		return salesPerson;
+	}
+
+	public void setSalesPerson(String salesPerson) {
+		this.salesPerson = salesPerson;
+	}
+
+	@Override
+	public String toString() {
+		return "Order [id=" + id + ", salesPerson=" + salesPerson + "]";
+	}
+    
+    
     
     
 
