@@ -72,5 +72,40 @@ public class CRMejb {
 		}
 		
 	}
+	
+	//tallenna tilaus
+	public void saveOrder(Order order) {
+		try {
+			em.persist(order);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+	}
+	
+	@SuppressWarnings("unchecked")
+	public List<Order> getOrders() {
+		List<Order> orders = null; 
+		// get all orders from the database
+		orders = em.createNamedQuery("searchAllOrders").getResultList();
+		return orders;
+	}
+	
+	public void saveOrderObject(OrderObject orderObject) {
+		try {
+			em.persist(orderObject);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+	}
+	
+	@SuppressWarnings("unchecked")
+	public List<OrderObject> getOrdersObjects() {
+		List<OrderObject> orderObjects = null; 
+		// get all orders from the database
+		orderObjects = em.createNamedQuery("searchAllOrderObjects").getResultList();
+		return orderObjects;
+	}
 
 }

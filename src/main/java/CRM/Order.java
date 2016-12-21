@@ -10,7 +10,8 @@ import javax.faces.bean.RequestScoped;
 
 @ManagedBean
 @RequestScoped
-//@Entity
+@Entity
+@NamedQuery(name = "searchAllOrders", query = "SELECT order from Order order") 
 public class Order {
 //  private static final long serialVersionUID = 1L;
     @Id
