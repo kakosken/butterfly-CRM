@@ -24,10 +24,14 @@ public class Customer implements Serializable {
 	 @GeneratedValue(strategy = GenerationType.AUTO)
 	 private long id;
 	
+	private Company company;
+	
 	private String name;
 	private String phone;
 	private String address;
 	private String email;
+	private String country;
+	private String salesperson; //vastuumyyjä
 	private enum status {
 		CONTACT, CUSTOMER, ONGOING, LEAD, OLD_CUSTOMER, RETIRED
 	}

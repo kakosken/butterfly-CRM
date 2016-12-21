@@ -53,7 +53,7 @@ public class CRMejb {
 		}
 	}
 	
-	public List<Account> search(){
+	public List<Account> getAccounts(){
 		
 		List<Account> accounts = null; 
 		accounts = em.createNamedQuery("searchAllAccounts").getResultList();
@@ -71,6 +71,15 @@ public class CRMejb {
 			System.out.println("Uuden asiakkaan lisääminen ei onnistunut! "+customer);
 		}
 		
+	}
+	
+	public List<Customer> getCustomers(){
+		
+		List<Customer> customers = null; 
+		customers = em.createNamedQuery("searchAllCustomers").getResultList();
+		System.out.println("*********** search all ********** => " + customers);
+		
+		return customers;
 	}
 
 }

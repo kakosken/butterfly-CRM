@@ -66,7 +66,7 @@ public class AccountController {
 	
 
 	public List<Account> getAccounts() {
-		return crmEjb.search();
+		return crmEjb.getAccounts();
 	}
 
 
