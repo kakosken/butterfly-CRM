@@ -29,7 +29,7 @@ public class OrderController {
 	//}
 	
 
-	public String initialize() {
+	public String initializeOrder() {
 		return null;
 	}
 
