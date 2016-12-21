@@ -14,7 +14,7 @@ import javax.persistence.NamedQuery;
 @ManagedBean
 @RequestScoped
 @Entity
-@NamedQuery(name = "searchAll", query = "SELECT a from Account a") 
+@NamedQuery(name = "searchAllAccounts", query = "SELECT a from Account a") 
 public class Account implements Serializable{
 	
 	 @Id
@@ -25,7 +25,7 @@ public class Account implements Serializable{
 	 private String userName;
 	 private String password; 
 	 private String email;
-	 private enum Rooli { 
+	 private enum Role { 
 			ADMINISTRATOR, SALESPERSON, CUSTOMERSERVANT;
 	 }
 	 

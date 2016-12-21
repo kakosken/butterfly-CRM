@@ -1,6 +1,10 @@
 package CRM;
 
+
 import java.io.Serializable;
+
+public class Customer {
+
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;

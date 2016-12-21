@@ -1,13 +1,25 @@
 CRM/Customer.class
 CRM/Account.class
+<<<<<<< HEAD
+CRM/Administrator.class
+=======
+>>>>>>> d5eed592a45b90e08f07b037a25c0ff6e944b65b
 CRM/Order.class
 CRM/Company.class
 kauppa/Tuote.class
 CRM/CRMejb.class
+<<<<<<< HEAD
+CRM/OrderObjectController.class
+CRM/UserController.class
+=======
 CRM/AccountController.class
 CRM/OrderObjectController.class
+>>>>>>> d5eed592a45b90e08f07b037a25c0ff6e944b65b
 CRM/OrderObject.class
 CRM/CustomerController.class
 CRM/CompanyController.class
 CRM/OrderController.class
+<<<<<<< HEAD
+=======
 CRM/Account$Rooli.class
+>>>>>>> d5eed592a45b90e08f07b037a25c0ff6e944b65b

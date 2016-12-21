@@ -45,6 +45,13 @@ public class CRMejb {
 	
 	public void deleteAccount(Account account){
 		//käyttäjätilin poistaminen
+		try{
+			em.remove(account);
+			System.out.println("Account deleted: "+account);
+		}catch (Exception e){
+			System.out.println("Käyttäjätilin poistaminen ei onnistunut");
+			e.printStackTrace();
+		}
 	}
 	
 	public List<Account> search(){
@@ -53,6 +60,18 @@ public class CRMejb {
 		accounts = em.createNamedQuery("searchAll").getResultList();
 		System.out.println("*********** search all ********** => " + accounts);
 		return accounts;
+	}
+
+	//Uuden asiakkaan lisääminen
+	public void addCustomer(Customer customer) {
+		try{
+			em.persist(customer);
+			System.out.println("Uusi asiakas tallennettu: "+customer);
+		}catch (Exception e){
+			e.printStackTrace();
+			System.out.println("Uuden asiakkaan lisääminen ei onnistunut! "+customer);
+		}
+		
 	}
 
 }
