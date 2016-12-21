@@ -3,6 +3,7 @@ package CRM;
 /* Terhi Järvenpää */
 
 import java.awt.List;
+import java.util.ArrayList;
 
 import javax.ejb.EJB;
 import javax.faces.application.FacesMessage;
@@ -47,9 +48,9 @@ public class CompanyController {
 	
 
 
-	//public  List<Company> listCompanies() {
-		//return crmEjb.getCompanies();
-	//}
+	public  ArrayList<Company> listCompanies() {
+		return (ArrayList<Company>) crmEjb.getCompanies();
+	}
 	
 
 	public String initialize() {
