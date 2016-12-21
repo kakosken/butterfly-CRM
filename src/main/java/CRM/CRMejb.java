@@ -21,7 +21,6 @@ public class CRMejb {
 	
 	
 	public void init(){
-		//Tähän testidataa tietokantaan
 		Account testi = new Account();
 		testi.setName("TestiNimi");
 		testi.setPassword("testisalasana");
@@ -57,7 +56,7 @@ public class CRMejb {
 	public List<Account> search(){
 		
 		List<Account> accounts = null; 
-		accounts = em.createNamedQuery("searchAll").getResultList();
+		accounts = em.createNamedQuery("searchAllAccounts").getResultList();
 		System.out.println("*********** search all ********** => " + accounts);
 		return accounts;
 	}

@@ -13,119 +13,47 @@
 
 <h:form id="mainform">
 	
-		<table>
-			<tr>
-				<td>Asiakkaan nimi: <h:inputText id="customer_name" value="#{tilaus.customer}" /></td>				
-			</tr>
-		</table>
-		<h4>Tuotevalikoima</h4>
-		<h:dataTable styleClass="data" cellspacing="0<h:form id="mainform">
 	
-		<table>
+	<!--	<table>
 			<tr>
-				<td>Asiakkaan nimi: <h:inputText id="customer_name" value="#{tilaus.customer}" /></td>				
+				<td>Käyttäjän nimi:   <h:inputText id="account_name" value="#{accountController.account}" />   </td>	 			
 			</tr>
-		</table>
-		<h4>Tuotevalikoima</h4>
+		</table>  -->
+		<h4>Käyttäjät</h4>
+		
 		<h:dataTable styleClass="data" cellspacing="0" cellpadding="0"
-			border="0" rowClasses="odd,even" value="#{tuoteController.tuotteet}"
+			border="0" rowClasses="odd,even" value="#{accountController.accounts}"
 			var="t">
 			<h:column headerstyleClass="first">
 				<f:facet name="header">Name</f:facet>
-                    #{t.name}
+                 #{t.name}
             </h:column>
+      <!--       <h:column headerstyleClass="first">
+				<f:facet name="header">Email</f:facet>
+               #{t.email}  
+            </h:column>  -->
             <h:column headerstyleClass="first">
-				<f:facet name="header">Hinta</f:facet>
-                    #{t.price}
+				<f:facet name="header">Käyttäjänimi</f:facet>
+					#{t.userName}
             </h:column>
-            <h:column headerstyleClass="first">
-				<f:facet name="header">Tilausmäärä</f:facet>
-					<h:inputText id="amount" value="#{t.amount}" />
-            </h:column>
-            <h:column headerstyleClass="first">
+      <!--   <h:column headerstyleClass="first">
 				<f:facet name="header">Ostoskoriin</f:facet>
                     <h:commandLink action="#{tuoteController.addCart(t)}" value="Lisää" />
             </h:column>
+        -->    
             
 		</h:dataTable>
-
+		
 		<table>
 			<tr>
-				<td><h:commandButton action="#{tuoteController.initialize()}"
-						value="lataa" /></td><h:form id="mainform">
-	
-		<table>
-			<tr>
-				<td>Asiakkaan nimi: < h:inputText id="customer_name" value="#{tilaus.customer}" /></td>				
-			</tr>
+				<td><h:commandButton action="#{accountController.init()}"
+						value="lataa testidataa" /></td>
+		</tr>
 		</table>
-		<h4>Tuotevalikoima</h4>
-		<h:dataTable styleClass="data" cellspacing="0" cellpadding="0"
-			border="0" rowClasses="odd,even" value="#{accountController.tuotteet}"
-			var="t">
-			<h:column headerstyleClass="first">
-				<f:facet name="header">Name</f:facet>
-                    #{t.name}
-            </h:column>
-            <h:column headerstyleClass="first">
-				<f:facet name="header">Hinta</f:facet>
-                    #{t.price}
-            </h:column>
-            <h:column headerstyleClass="first">
-				<f:facet name="header">Tilausmäärä</f:facet>
-					<h:inputText id="amount" value="#{t.amount}" />
-            </h:column>
-            <h:column headerstyleClass="first">
-				<f:facet name="header">Ostoskoriin</f:facet>
-                    <h:commandLink action="#{tuoteController.addCart(t)}" value="Lisää" />
-            </h:column>
-            
-		</h:dataTable>
 
-		<table>
-			<tr>
-				<td><h:commandButton action="#{tuoteController.initialize()}"
-						value="lataa" /></td>
-				<td><h:commandButton action="insertTuote" value="lisää..." /></td>
-			</tr>
-		</table>
-		</h:form>
-						
-				<td><h:commandButton action="insertTuote" value="lisää..." /></td>
-			</tr>
-		</table>
-		</h:form>
-		" cellpadding="0"
-			border="0" rowClasses="odd,even" value="#{tuoteController.tuotteet}"
-			var="t">
-			<h:column headerstyleClass="first">
-				<f:facet name="header">Name</f:facet>
-                    #{t.name}
-            </h:column>
-            <h:column headerstyleClass="first">
-				<f:facet name="header">Hinta</f:facet>
-                    #{t.price}
-            </h:column>
-            <h:column headerstyleClass="first">
-				<f:facet name="header">Tilausmäärä</f:facet>
-					<h:inputText id="amount" value="#{t.amount}" />
-            </h:column>
-            <h:column headerstyleClass="first">
-				<f:facet name="header">Ostoskoriin</f:facet>
-                    <h:commandLink action="#{tuoteController.addCart(t)}" value="Lisää" />
-            </h:column>
-            
-		</h:dataTable>
 
-		<table>
-			<tr>
-				<td><h:commandButton action="#{tuoteController.initialize()}"
-						value="lataa" /></td>
-				<td><h:commandButton action="insertTuote" value="lisää..." /></td>
-			</tr>
-		</table>
-		</h:form>
-
+		
+</h:form>
 </h:body>
 
 </html>

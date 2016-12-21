@@ -9,7 +9,6 @@ import javax.faces.bean.ManagedProperty;
 import javax.faces.context.FacesContext;
 
 
-
 /*
  * Piia Loukeinen, team 3
  */
@@ -39,6 +38,10 @@ public class AccountController {
 		this.account = account;
 	}
 	
+	public void init(){
+		crmEjb.init();
+	}
+	
 	
 	
 	public String addAccount(){
@@ -62,7 +65,7 @@ public class AccountController {
 	}
 	
 
-	public List<Account> searchAccounts() {
+	public List<Account> getAccounts() {
 		return crmEjb.search();
 	}
 
