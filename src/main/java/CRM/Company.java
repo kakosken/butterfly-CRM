@@ -13,6 +13,8 @@ import javax.faces.bean.RequestScoped;
 @RequestScoped
 @Entity
 
+@NamedQuery(name = "searchAllCompanies", query = "SELECT company from Company company") 
+
 public class Company {
 
     @Id

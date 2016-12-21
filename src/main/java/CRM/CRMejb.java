@@ -119,5 +119,24 @@ public class CRMejb {
 		return orderObjects;
 
 	}
+	
+	//tallentaa yrityksen tiedot
+	public void saveCompany(Company company) {
+		try {
+			em.persist(company);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+	}
+	
+	@SuppressWarnings("unchecked")
+	public List<Company> getCompanies() {
+		List<Company> companies = null; 
+		// get all companie from the database
+		companies = em.createNamedQuery("searchAllCompanies").getResultList();
+		return companies;
+
+	}
 
 }
