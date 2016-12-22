@@ -3,17 +3,21 @@ package CRM;
 /* Terhi Järvenpää */
 
 import java.awt.List;
+import java.util.ArrayList;
 
+import javax.ejb.EJB;
+import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
+import javax.faces.context.FacesContext;
 
 @ManagedBean
 
 public class CompanyController {
 	
 	
-	//	@EJB
-	//	private CompanyEjb companyEjb;
+	@EJB
+	private CRMejb crmEjb;
 
 	@ManagedProperty(value = "#{company}")
 	private Company company;
@@ -27,14 +31,26 @@ public class CompanyController {
 	}
 	
 	public String saveCompany() {
-		return ("Company saved");
+		
+		String viesti = "Uuden asiakkaan lisääminen onnistui "+ company;
+		
+		FacesContext facesContext = FacesContext.getCurrentInstance();
+		//CRMejb.addAccount(account);
+		crmEjb.saveCompany(company);
+		
+		FacesMessage facesMessage = new FacesMessage(viesti);
+		facesContext.addMessage(null, facesMessage);
+
+		return "index";
+		//return ("Company saved");
 	}
 	
 	
-	
-	//public  List<Company> listCompanies() {
-	//	return null;
-	//}
+
+
+	public  ArrayList<Company> listCompanies() {
+		return (ArrayList<Company>) crmEjb.getCompanies();
+	}
 	
 
 	public String initialize() {
