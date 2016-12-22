@@ -32,7 +32,7 @@ public class CompanyController {
 	
 	public String saveCompany() {
 		
-		String viesti = "Uuden asiakkaan lisääminen onnistui "+ company;
+		String viesti = "Uuden yrityksen lisääminen onnistui "+ company;
 		
 		FacesContext facesContext = FacesContext.getCurrentInstance();
 		//CRMejb.addAccount(account);
